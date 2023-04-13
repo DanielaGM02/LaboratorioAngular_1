@@ -1,0 +1,49 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+<script src="https://use.fontawesome.com/6a4ab084c1.js"></script>
+<div class="testbox">
+    <form action="/" class="align">
+      <h2 class="titulo">REGISTRO DE PRODUCTOS</h2>
+
+  <label id="icon" for="nombre"><i class="icon-user"></i></label>
+  <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" [(ngModel)]="producto.nombre"/>
+  <label id="icon" for="precio"><i class="icon-money" aria-hidden="true"></i></label>
+  <input type="text" name="precio" id="precio" placeholder="Precio" [(ngModel)]="producto.precio"/>
+  <label id="icon" for="stock"></label>
+  <input type="text" name="stock" id="stock" placeholder="Stock" [(ngModel)]="producto.stock"/>
+  <label id="icon" for="estado"></label>
+  <input type="text" name="estado" id="estado" placeholder="Estado" [(ngModel)]="producto.estado"/>
+      
+  <button (click)="agregar()">REGISTRAR</button>
+  <button (click)="eliminar()">BORRAR</button>
+  </form>
+</div>
+
+
+
+<div class="main-container">
+
+  <table>
+    <thead>
+      <tr *ngIf="productos.length != 0; else nohay">
+        <th>NOMBRE</th>
+        <th>PRECIO</th>
+        <th>STOCK</th> 
+        <th>ESTADO</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let p of productos">
+        <td>{{p.nombre}}</td>
+        <td>{{p.precio}}</td>
+        <td>{{p.stock}}</td>
+        <td>{{p.estado}}</td>
+      </tr>
+    </tbody>  
+  </table>
+  <ng-template #nohay>
+    <h3>NO SE ENCUENTRAN PRODUCTOS</h3>
+  </ng-template>
+    
+</div>
