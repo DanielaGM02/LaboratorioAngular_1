@@ -1,1 +1,35 @@
-<p>listado works!</p>
+<div class="main-container">
+  <table>
+      <thead>
+        <tr *ngIf="productos.length != 0; else nohay">
+          <th>NOMBRE</th>
+          <th>PRECIO</th>
+          <th>STOCK</th> 
+          <th>ESTADO</th>
+          <th>OPCIONES</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let p of productos">
+          <td>{{p.nombre}}</td>
+          <td>{{p.precio}}</td>
+          <td>{{p.stock}}</td>
+          <td>{{p.estado}}</td>
+          <td>
+            <!-- <button (click)="editar()">EDITAR</button> -->
+            <!-- <button type="button" class="btn btn-primary col"  (click)="editar?.modificarProducto(p)">Editar</button> -->
+            <button (click)="editar?.modificarProducto(p)">Editar</button>
+            <button (click)="eliminar_producto()">ELIMINAR</button>
+          </td>
+          <!-- <button (click)="editar()">EDITAR</button>
+          <button (click)="eliminar_producto()">ELIMINAR</button> -->
+        </tr>
+      </tbody>  
+    </table>
+    <ng-template #nohay>
+      <h3>NO SE ENCUENTRAN PRODUCTOS</h3>
+    </ng-template>
+  </div>
+
+  

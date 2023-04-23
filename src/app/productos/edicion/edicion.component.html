@@ -1,9 +1,10 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 <script src="https://use.fontawesome.com/6a4ab084c1.js"></script>
+
 <div class="testbox">
     <form action="/" class="align">
-      <h2 class="titulo">REGISTRO DE PRODUCTOS</h2>
+      <h2 class="titulo">EDITAR PRODUCTOS</h2>
 
   <label id="icon" for="nombre"><i class="icon-user"></i></label>
   <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" [(ngModel)]="producto.nombre"/>
@@ -14,8 +15,6 @@
   <label id="icon" for="estado"></label>
   <input type="text" name="estado" id="estado" placeholder="Estado" [(ngModel)]="producto.estado"/>
       
-  <button (click)="agregar()">REGISTRAR</button>
-  <button (click)="eliminar()">BORRAR</button>
+  <!-- <button (click)="agregar()">ACTUALIZAR</button> -->
   </form>
 </div>
-
