@@ -23,7 +23,6 @@ producto: Producto = {
 constructor(private productoService:ProductoService){};
 
 agregar(){
-
   this.productoService.crearProducto(this.producto).subscribe(resp=>{
     this.producto= {
     id:0,
@@ -36,14 +35,6 @@ agregar(){
     console.log(resp);
     this.Listado?.ngOnInit();
   })
-  this.producto = {
-    id:0,
-    nombre: '',
-    precio: 0,
-    stock: 0,
-    estado: 'Disponible',
-    opciones: ''
-    }
 }
 
 eliminar(){

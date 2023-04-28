@@ -3,6 +3,7 @@ import { Producto } from 'src/app/modelo/producto';
 import { RegistroComponent } from '../registro/registro.component';
 import { ProductoService } from 'src/app/servicios/producto.service';
 import { EdicionComponent } from '../edicion/edicion.component';
+import { EliminacionComponent } from '../eliminacion/eliminacion.component';
 
 @Component({
   selector: 'app-listado',
@@ -13,6 +14,7 @@ export class ListadoComponent implements OnInit {
   public productos: Producto[] = [];
   
   @Input() editar: EdicionComponent | undefined;
+  @Input() eliminacion: EliminacionComponent | undefined;
 
   constructor (public servicioProducto:ProductoService){};
   // constructor(private servicioProducto:ProductoService, private router: Router){}
@@ -32,11 +34,7 @@ export class ListadoComponent implements OnInit {
     this.productos=[];
   }
 
-  // editar(){
-
-  // }
-
-  eliminar_producto(){
-    
+  eliminar_producto(producto: Producto){
+    this.eliminacion?.eliminar(producto);
   }
 }

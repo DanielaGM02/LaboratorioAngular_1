@@ -8,5 +8,6 @@
 <h1 class="titulo">GESTIÓN DE PRODUCTOS</h1>
 
 <app-registro [Listado]="listar"></app-registro>
-<app-listado #listar></app-listado>
-<app-edicion #editar></app-edicion>
+<app-listado #listar [editar]="editado" [eliminacion]="eliminar"></app-listado>
+<app-edicion #editado [listado]="listar"></app-edicion>
+<app-eliminacion #eliminar [listado]="listar"></app-eliminacion>
